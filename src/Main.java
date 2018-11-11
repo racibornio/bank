@@ -9,15 +9,16 @@ public class Main {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con=DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/premiere?serverTimezone=UTC&useSSL=false","java","j83PsxTVk94RtyUW");
+                    "jdbc:mysql://localhost:3306/premiere?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true","java","j83PsxTVk94RtyUW");
             System.out.println("Connection success!");
 
-            Statement stmt=con.createStatement();
+            Statement stmt = con.createStatement();
+            /*
             String sql = "INSERT INTO customers " +
                     "VALUES (3, 'Czeslaw', 'Alojzy', 'Jakistam')";
             stmt.executeUpdate(sql);
-
-            ResultSet rs=stmt.executeQuery("select * from customers");
+*/
+            ResultSet rs = stmt.executeQuery("select * from customers");
 
             while (rs.next()) {
                 System.out.println(rs.getInt(1) + ", " + rs.getString(2) + ", " + rs.getString(3) + ", " + rs.getString(4));
