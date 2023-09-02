@@ -9,7 +9,7 @@ public class Main {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con=DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/premiere?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true","java","j83PsxTVk94RtyUW");
+                    "jdbc:mysql://localhost:3306/premiere?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true","java","");
             System.out.println("Connection success!");
 
             Statement stmt = con.createStatement();
